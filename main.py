@@ -1,4 +1,4 @@
-from vetor import VetorRandomico
+from geraVetor.vetor import VetorRandomico
 from ordenacao.insertionSort import insertionSort
 from ordenacao.selectionSort import selectionSort
 import timeit
