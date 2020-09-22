@@ -7,5 +7,5 @@ vetor = VetorRandomico().preenche_vetor(30)
 print(vetor)
 # print(vetor.tamanho_vetor())
 
-# print(insertionSort(vetor))
-print(selectionSort(vetor))
+print(insertionSort(vetor))
+# print(selectionSort(vetor))
