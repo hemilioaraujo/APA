@@ -8,6 +8,7 @@ class VetorRandomico:
     def preenche_vetor(self, n):
         for i in range(n):
             self.vetor.append(randint(10000, 99999))
+        return self.vetor
 
     def print_vetor(self):
         for i in self.vetor:
