@@ -4,7 +4,7 @@ from ordenacao.selectionSort import selectionSort
 from ordenacao.quickSort import quickSort
 import timeit
 
-vetor = VetorRandomico().preenche_vetor(3)
+vetor = VetorRandomico().preenche_vetor(5)
 print(vetor)
 # print(vetor.tamanho_vetor())
 
