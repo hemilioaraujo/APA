@@ -18,22 +18,30 @@ class VetorRandomico:
     def tamanho_vetor(self):
         return len(self.vetor)
 
-    def print_resultados(vetor, ordenado, tipo, trocas):
-        print('\n**************************************************************************')
-        print(f'                              {tipo}')
-        print('**************************************************************************\n')
+    def arquiva_resultados(rodada, vetor, ordenado, tipo, trocas, tempo, arquivo):
+        file = open(f"resultados/{arquivo}" + ".txt", "a")
+        file.write('**************************************************************************\n')
+        file.write(f'                              {tipo} [{rodada}]\n')
+        file.write('**************************************************************************\n')
 
-        print('\n**************************************************************************')
-        print(f'                           VETOR DESORDENADO')
-        print('**************************************************************************\n')
-        print(vetor)
+        file.write('**************************************************************************\n')
+        file.write(f'                           VETOR DESORDENADO\n')
+        file.write('**************************************************************************\n')
+        for i in vetor:
+            file.write(f"{str(i)} ")
+        file.write("\n")
 
-        print('\n**************************************************************************')
-        print(f'                            VETOR ORDENADO')
-        print('**************************************************************************\n')
-        print(ordenado)
+        file.write('**************************************************************************\n')
+        file.write(f'                            VETOR ORDENADO\n')
+        file.write('**************************************************************************\n')
+        for i in ordenado:
+            file.write(f"{str(i)} ")
+        file.write("\n")
+        
+        file.write('**************************************************************************\n')
+        file.write(f'                       TROCAS NECESSÁRIAS {trocas}\n')
+        file.write('                       TEMPO NECESSÁRIO {:.9f}\n'.format(tempo))
+        file.write('**************************************************************************\n')
 
-        print('\n**************************************************************************')
-        print(f'                       TROCAS NECESSÁRIAS {trocas}')
-        print('**************************************************************************\n')
+        file.close()
 

@@ -1,14 +1,19 @@
 from geraVetor.vetor import VetorRandomico
+
+from ordenacao.bubbleSort import bubbleSort
+from ordenacao.heapSort import heapSort
 from ordenacao.insertionSort import insertionSort
-from ordenacao.selectionSort import selectionSort
 from ordenacao.quickSort import quickSort
-import timeit
+from ordenacao.selectionSort import selectionSort
+from ordenacao.shellSort import shellSort
 
-vetor = VetorRandomico().preenche_vetor(5)
-print(vetor)
-# print(vetor.tamanho_vetor())
+import time
 
-# print(insertionSort(vetor))
-# print(selectionSort(vetor))
-trocas = quickSort(vetor)
-print(vetor, trocas)
+vetor_random = VetorRandomico().preenche_vetor(30000)
+
+# bubble
+for i  in range(5):
+    inicio = time.time()
+    ordenado, trocas = bubbleSort(list(vetor_random))
+    tempo = time.time() - inicio
+    VetorRandomico.arquiva_resultados(i+1, vetor_random, ordenado, "HEAP SORT", trocas, tempo, "bubble")
