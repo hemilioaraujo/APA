@@ -1,5 +1,6 @@
 trocas = 0
 
+
 def partition(arr,low,high): 
     global trocas
     trocas = low
@@ -16,21 +17,26 @@ def partition(arr,low,high):
     trocas += 1
     return ( i+1 )
 
-def quickSort(arr, low, high):
+
+def _quickSort(arr, low, high):
     if low < high: 
         pi = partition(arr,low,high)
-        quickSort(arr, low, pi-1) 
-        quickSort(arr, pi+1, high)
+        _quickSort(arr, low, pi-1) 
+        _quickSort(arr, pi+1, high)
+    
+
+
+def quickSort(arr):
+    n = len(arr)
+    low = 0
+    high = n - 1
+    _quickSort(arr, low, high)
     global trocas
-    return trocas
+    return arr, trocas
 
 
 if __name__ == "__main__":    
-    arr = [10, 80, 30, 90, 40, 50, 70] # 5 trocas
-    # arr = [4,7,2,6,4,1,8,3] # 6 trocas
-    n = len(arr) 
+    arr = [10, 80, 30, 90, 40, 50, 70]
     print(arr)
-    trocas = quickSort(arr,0,n-1)
-    print(arr)
-    print(f'Número de trocas: {trocas}')
-    
+    vetor, trocas = quickSort(arr)
+    print(vetor, trocas)    
