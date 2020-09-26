@@ -9,11 +9,20 @@ from ordenacao.shellSort import shellSort
 
 import time
 
-vetor_random = VetorRandomico().preenche_vetor(30000)
+vetor_random = VetorRandomico().preenche_vetor(30)
+metodos = {
+    "BUBBLE": bubbleSort,
+    "HEAP": heapSort,
+    "INSERTION": insertionSort,
+    "QUICK": quickSort,
+    "SELECTION": selectionSort,
+    "SHELL": shellSort
+}
 
-# bubble
-for i  in range(5):
-    inicio = time.time()
-    ordenado, trocas = bubbleSort(list(vetor_random))
-    tempo = time.time() - inicio
-    VetorRandomico.arquiva_resultados(i+1, vetor_random, ordenado, "HEAP SORT", trocas, tempo, "bubble")
+
+for i in metodos.keys():
+    for j in range(3):
+        inicio = time.time()
+        ordenado, trocas = metodos[i](list(vetor_random))
+        tempo = time.time() - inicio
+        VetorRandomico.arquiva_resultados(j+1, vetor_random, ordenado, i, trocas, tempo)

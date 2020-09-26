@@ -18,10 +18,19 @@ class VetorRandomico:
     def tamanho_vetor(self):
         return len(self.vetor)
 
-    def arquiva_resultados(rodada, vetor, ordenado, tipo, trocas, tempo, arquivo):
-        file = open(f"resultados/{arquivo}" + ".txt", "a")
+    def arquiva_dados_importantes(rodada, tipo, trocas, tempo):
+        file = open(f"resultados/dados_importantes.txt", "a")
         file.write('**************************************************************************\n')
-        file.write(f'                              {tipo} [{rodada}]\n')
+        file.write(f'{tipo} SORT [{rodada}]\n')
+        file.write(f'TROCAS NECESSÁRIAS {trocas}\n')
+        file.write('TEMPO NECESSÁRIO {:.9f}\n'.format(tempo))
+        file.write('**************************************************************************\n')
+        file.close()
+
+    def arquiva_resultados(rodada, vetor, ordenado, tipo, trocas, tempo):
+        file = open(f"resultados/{tipo}" + ".txt", "a")
+        file.write('**************************************************************************\n')
+        file.write(f'                              {tipo} SORT [{rodada}]\n')
         file.write('**************************************************************************\n')
 
         file.write('**************************************************************************\n')
@@ -44,4 +53,4 @@ class VetorRandomico:
         file.write('**************************************************************************\n')
 
         file.close()
-
+        VetorRandomico.arquiva_dados_importantes(rodada, tipo, trocas, tempo)
