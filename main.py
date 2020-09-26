@@ -24,6 +24,7 @@ metodos = {
     "SHELL": shellSort
 }
 
+VetorRandomico.cabecalho()
 
 for i in metodos.keys():
     for j in range(3):
