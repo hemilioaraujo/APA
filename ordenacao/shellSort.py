@@ -15,9 +15,11 @@ def shellSort(arr):
 			arr[j] = temp
 
 		gap = round(gap/2)
+	
+	return arr, trocas
 
 if __name__ == "__main__":
 	arr = [12, 34, 54, 2, 3]
 	print(arr)
-	shellSort(arr)
-	print(arr)
+	vetor, trocas = shellSort(arr)
+	print(vetor, trocas)
