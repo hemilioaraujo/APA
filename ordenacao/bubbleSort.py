@@ -1,6 +1,3 @@
-from os import name
-
-
 def bubbleSort(arr): 
     trocas = 0
     n = len(arr)

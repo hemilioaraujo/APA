@@ -14,5 +14,4 @@ if __name__ == "__main__":
 	vetor = [12, 11, 13, 5, 6]
 	print(vetor)
 	vetor_ordenado, trocas = insertionSort(vetor)
-	print(vetor)
-	print(f'Número de trocas: {trocas}')
+	print(vetor, trocas)

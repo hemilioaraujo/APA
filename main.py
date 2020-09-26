@@ -10,5 +10,5 @@ print(vetor)
 
 # print(insertionSort(vetor))
 # print(selectionSort(vetor))
-trocas = quickSort(vetor, 0, len(vetor)-1)
+trocas = quickSort(vetor)
 print(vetor, trocas)

@@ -1,7 +1,3 @@
-# Python program for implementation of Selection 
-# Sort 
-import sys 
-
 def selectionSort(A):
     trocas = 0
     for i in range(len(A)): 
@@ -16,10 +12,8 @@ def selectionSort(A):
     return A, trocas
 
 
-
 if __name__ == "__main__":
-    vetor = [7, 5, 1, 8, 3]
-    print(vetor)
-    vetor_ordenado, trocas = selectionSort(vetor)
-    print(vetor)
-    print(f'Número de trocas: {trocas}')
+    arr = [7, 5, 1, 8, 3]
+    print(arr)
+    vetor, trocas = selectionSort(arr)
+    print(vetor, trocas)
